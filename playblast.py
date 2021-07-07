@@ -1,8 +1,4 @@
-import copy
 import os
-import sys
-import traceback
-
 
 from PySide2 import QtCore
 from PySide2 import QtGui
@@ -13,6 +9,9 @@ import shot as shot;reload(shot)
 import pymel.core as pm
 
 class HLine(QtWidgets.QFrame):
+	"""
+	Horizal line widget
+	"""
 	def __init__(self):
 		super(HLine, self).__init__()
 		self.setFrameShape(QtWidgets.QFrame.HLine)
@@ -21,6 +20,9 @@ class HLine(QtWidgets.QFrame):
 
 
 class HorizantalLineWithText(QtWidgets.QDialog):
+	"""
+	Horizantal line eith text widget
+	"""
 	def __init__(self, text):
 		super(HorizantalLineWithText, self).__init__()
 		main_layout = QtWidgets.QHBoxLayout()
@@ -35,6 +37,9 @@ class HorizantalLineWithText(QtWidgets.QDialog):
 		main_layout.addWidget(self.div2 )
 
 class Playblast(QtWidgets.QDialog):
+	"""
+	Playblast tool
+	"""
 
 	RESOLUTION = {"HD 1080": (1920, 1080), "HD 720": (1280, 720), "HD 540": (960, 540)}
 		
@@ -47,7 +52,6 @@ class Playblast(QtWidgets.QDialog):
 			self.initConnections()
 			
 			
-	
 	def initUi(self):
 		self.setWindowTitle("Playblast")
 		self.setFixedWidth(350)
